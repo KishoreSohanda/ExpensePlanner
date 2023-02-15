@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './widgets/user_transactions.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,7 +17,16 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+
+  //  late final String titleInput;
+  //  late final String amountInput;
+  
+
   const MyHomePage({super.key});
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +34,19 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter App'),
       ),
-      body: const Center(
-        child: Text('Widget Playground!'),
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            width: double.infinity,
+            child: const Card(
+              color: Colors.blue,
+              child: Text('CHART!'),
+            ),
+          ),
+         const UserTransactions(),
+        ],
       ),
     );
   }
