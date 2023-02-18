@@ -11,9 +11,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter App',
-      home: MyHomePage(),
+    return MaterialApp(
+      title: 'Personal Expenses',
+      home: const MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        // accentColor:Colors.amber,
+        fontFamily: 'Quicksand',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              titleLarge: const TextStyle(
+                fontFamily: 'OpenSans',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+        
+      ),
     );
   }
 }
@@ -73,7 +86,10 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () => _startAddNewTransaction(context),
           ),
         ],
-        title: const Text('Flutter App'),
+        title: const Text(
+          'Personal Expenses',
+          // style: TextStyle(fontFamily: 'Open Sans'),
+        ),
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceAround,
